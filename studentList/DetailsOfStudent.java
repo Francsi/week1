@@ -2,7 +2,10 @@ package studentList;
 import java.util.Scanner;
 public class DetailsOfStudent {
 	Scanner input = new Scanner(System.in);
-	
+	int noOfStudents=0;
+	String[] name = new String[noOfStudents];
+	String[] emailId = new String[noOfStudents];
+	String[] phoneNo = new String[noOfStudents];
 	public int choice() {
 		System.out.println("Choose the bellow options \n"
 				+ "1. Enter student details \n"
@@ -12,8 +15,12 @@ public class DetailsOfStudent {
 		return input.nextInt();
 	}
 	
-	public void enterDetails(int noOfStudents, String[] name, String[] emailId, String[] phoneNo) {
-		System.out.println("Students you can enter are "+noOfStudents);
+	public void enterDetails() {
+		System.out.println("Enter number of students ");
+		noOfStudents = input.nextInt();
+		name =  new String[noOfStudents];
+		emailId = new String[noOfStudents];
+		phoneNo = new String[noOfStudents];
 		for(int i=0; i<noOfStudents; i++) {
 			System.out.println("Enter name of the Student ");
 			name[i]=input.nextLine();
@@ -24,15 +31,20 @@ public class DetailsOfStudent {
 		}
 	}
 	
-	public void displayDetails(int noOfStudents, String[] name, String[] emailId, String[] phoneNo) {
-		for(int i=0; i<noOfStudents; i++) {
-			System.out.println((i+1)+" Name of the student is "+name[i]+"\n"
-					+(i+1)+" EmailId of the student "+name[i]+" is "+emailId[i]+"\n"
-					+(i+1)+" Phone number of the student "+name[i]+" is "+phoneNo[i]);
+	public void displayDetails() {
+		if(noOfStudents!=0) {
+			for(int i=0; i<noOfStudents; i++) {
+				System.out.println((i+1)+" Name of the student is "+name[i]+"\n"
+						+(i+1)+" EmailId of the student "+name[i]+" is "+emailId[i]+"\n"
+						+(i+1)+" Phone number of the student "+name[i]+" is "+phoneNo[i]);
+			}
+		}
+		else {
+			System.out.println("There are no students contain in the list.");
 		}
 	}
 	
-	public void searchStudent(int noOfStudents, String searchName, String[] name, String[] emailId, String[] phoneNo) {
+	public void searchStudent(String searchName) {
 		boolean flag = true;
 		for(int i=0; i<noOfStudents; i++) {
 			if(searchName.equals(name[i])) {
