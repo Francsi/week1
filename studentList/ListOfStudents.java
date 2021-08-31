@@ -6,6 +6,7 @@ public class ListOfStudents {
 		Scanner name = new Scanner(System.in);
 		System.out.println("Enter no. of students");
 		int noOfStudents = name.nextInt();
+		name.nextLine();
 		String[] studentList = new String[noOfStudents];
 		for(int i=0;i<noOfStudents;i++) {
 			System.out.println("Enter student name "+(i+1)+" ");
