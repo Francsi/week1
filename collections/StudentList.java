@@ -8,6 +8,7 @@ public class StudentList {
 		System.out.print("Enter number of students: ");
 		int noOfStudents; 
 		noOfStudents = input.nextInt();
+		input.nextLine();
 		for(int i=0; i<noOfStudents; i++) {
 			System.out.print((i+1)+" Enter names of student:");
 			studentName.add(input.nextLine());
