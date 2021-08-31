@@ -18,6 +18,7 @@ public class DetailsOfStudent {
 	public void enterDetails() {
 		System.out.println("Enter number of students ");
 		noOfStudents = input.nextInt();
+		input.nextLine();
 		name =  new String[noOfStudents];
 		emailId = new String[noOfStudents];
 		phoneNo = new String[noOfStudents];
