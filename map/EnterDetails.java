@@ -1,21 +1,26 @@
 package maps;
 import java.util.*;
 
-public class EnterDetails extends Details {
+public class EnterDetails {
 	public void enterDetails() {
 		Scanner input = new Scanner(System.in);
-		Map<String,String> studentDetails = new HashMap<String,String>();
 		System.out.println("Enter details of the students");
-		while(input.hasNext()) {
+		int num=0;
+		while(true) {
+			Map<String,String> studentDetails = new HashMap<String,String>();
 			System.out.println("Enter name of the student");
-			String name = input.nextLine();
-			studentDetails.put("Name",name);
+			studentDetails.put("name",input.nextLine());
 			System.out.println("Enter emailId of the student");
-			studentDetails.put("EmailId",input.nextLine());
+			studentDetails.put("emailId",input.nextLine());
 			System.out.println("Enter phone number of the student");
 			studentDetails.put("phone number",input.nextLine());
-			records.add(studentDetails);
+			Details.records.add(studentDetails);
+			System.out.println("Enter 1 to exit or else 0 to continue.");
+			num = input.nextInt();
+			input.nextLine();
+			if(num==1) {
+				break;
+			}
 		}
-		input.close();
 	}
 }
