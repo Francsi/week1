@@ -6,6 +6,7 @@ public class EnterDisplaySearch {
 		Choice ch = new Choice();
 		EnterDetails ed = new EnterDetails();
 		DisplayDetails dd = new DisplayDetails();
+		Search s = new Search();
 		boolean flag = false;
 		
 		while(true) {
@@ -18,6 +19,9 @@ public class EnterDisplaySearch {
 					dd.display();
 					break;
 				case 3:
+					s.search();
+					break;
+				case 4:
 					flag =true;
 					break;
 			}
