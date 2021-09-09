@@ -9,11 +9,11 @@ public class Search {
 			System.out.print("Enter name to searched:");
 			String searchName = input.nextLine();
 			boolean flag = true;
-			for(int i=0; i<length; i++) {
-				if(searchName.equals(Details.records.get(i).get("name"))) {
-					System.out.println("Name of the Student is:"+Details.records.get(i).get("name"));
-					System.out.println("EmailId of the Student is:"+Details.records.get(i).get("emailId"));
-					System.out.println("Phone number of the Student is:"+Details.records.get(i).get("phone number"));
+			for(Map detail : Details.records) {
+				if(searchName.equals(detail.get("name"))) {
+					System.out.println("Name of the Student is:"+detail.get("name")
+										+"EmailId of the Student is:"+detail.get("emailId")
+										+"Phone number of the Student is:"+detail.get("phone number"));
 					flag = false;
 					break;
 				}
