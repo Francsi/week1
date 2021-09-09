@@ -9,7 +9,6 @@ public class Choice {
 				+ "2.Display the details.\n"
 				+ "3.Exit\n");
 		int val = input.nextInt();
-		input.close();
 		return val;
 	}
 }
